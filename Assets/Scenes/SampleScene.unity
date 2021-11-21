@@ -466,8 +466,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: 129}
-  m_SizeDelta: {x: 115.57214, y: 25.606037}
+  m_AnchoredPosition: {x: 0.7, y: 129}
+  m_SizeDelta: {x: 370.58118, y: 25.606037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &387688170
 MonoBehaviour:
@@ -750,8 +750,9 @@ GameObject:
   - component: {fileID: 769843734}
   - component: {fileID: 769843733}
   - component: {fileID: 769843732}
+  - component: {fileID: 769843736}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,6 +839,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &769843736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769843731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb9e8a9d92d12942ac7427325836626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents: {fileID: 2047043042}
+  title: {fileID: 1911974028}
+  description: {fileID: 387688170}
 --- !u!1 &1080086943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,6 +1442,9 @@ MonoBehaviour:
   onBallMissed:
     m_PersistentCalls:
       m_Calls: []
+  onBallKicked:
+    m_PersistentCalls:
+      m_Calls: []
   ballController: {fileID: 1935716386}
   rocketsController: {fileID: 338696818}
 --- !u!4 &2047043043
@@ -1514,5 +1533,10 @@ PrefabInstance:
       propertyPath: gameEvents
       value: 
       objectReference: {fileID: 2047043042}
+    - target: {fileID: 4100830980509672815, guid: a36fb62851133794cbe5d51b5b645cc6,
+        type: 3}
+      propertyPath: randomAngle
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a36fb62851133794cbe5d51b5b645cc6, type: 3}

@@ -13,6 +13,7 @@ public class GameEvents : MonoBehaviour
     public UnityEvent onGameOver;
     public UnityEvent onScoreChange;
     public UnityEvent onBallMissed;
+    public UnityEvent onBallKicked;
 
     public BallController ballController;
     public RocketsController rocketsController;
@@ -22,6 +23,7 @@ public class GameEvents : MonoBehaviour
         onGameOver = new UnityEvent();
         onScoreChange = new UnityEvent();
         onBallMissed = new UnityEvent();
+        onBallKicked = new UnityEvent();
     }
 
     private void Update()
@@ -37,6 +39,7 @@ public class GameEvents : MonoBehaviour
         {
             isStarted = true;
             ballController.kickBall();
+            this.onBallKicked.Invoke();
         }
     }
 
@@ -45,6 +48,7 @@ public class GameEvents : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         this.isStarted = false;
         this.rocketsController.score = 0;
+        this.rocketsController.health = 3;
         this.onScoreChange.Invoke();
     }
 
