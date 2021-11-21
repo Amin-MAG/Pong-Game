@@ -7,5 +7,7 @@
         Ball,
         
         RocketRight,
-        RocketLeft
+        RocketLeft,
+        
+        DangerZone
     }

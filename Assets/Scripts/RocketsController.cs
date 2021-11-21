@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class RocketsController : MonoBehaviour
 {
+    public int score = 0;
+    [Range(0, 10)] public int health = 3;
+
+    public GameEvents gameEvents;
+
     public Rocket leftRocket;
     public Rocket rightRocket;
 
@@ -12,6 +17,7 @@ public class RocketsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameEvents.onBallMissed.AddListener(onMissedBall);
     }
 
     // Update is called once per frame
@@ -47,5 +53,21 @@ public class RocketsController : MonoBehaviour
         var rma = new Vector3(0, -1 * amount, 0);
         this.leftRocket.gameObject.transform.position += lma;
         this.rightRocket.gameObject.transform.position += rma;
+    }
+
+    private void onMissedBall()
+    {
+        this.health--;
+
+        if (this.health > 0)
+        {
+            this.gameEvents.resetGame();
+            this.gameEvents.onScoreChange.Invoke();
+        }
+        else
+        {
+            this.gameEvents.onGameOver.Invoke();
+        }
+
     }
 }
