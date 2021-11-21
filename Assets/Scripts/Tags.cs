@@ -6,5 +6,6 @@
         
         Ball,
         
-        Rocket
+        RocketRight,
+        RocketLeft
     }

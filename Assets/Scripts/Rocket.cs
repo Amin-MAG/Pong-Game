@@ -26,13 +26,13 @@ public class Rocket : MonoBehaviour
         Debug.Log(other);
         if (other.gameObject.CompareTag(Tags.WallUp.ToString()))
         {
-            Debug.Log(this + "touch up wall");
+            Debug.Log(this + " rocket touch up wall");
             this.upIsBlocked = true;
         }
         
         if (other.gameObject.CompareTag(Tags.WallDown.ToString()))
         {
-            Debug.Log(this + "touch down wall");
+            Debug.Log(this + " rocket touch down wall");
             this.downIsBlocked = true;
         }
     }

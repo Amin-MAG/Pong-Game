@@ -5,10 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
-  - Wall
   - Rocket
   - WallUp
   - WallDown
+  - RocketLeft
+  - RocketRight
   layers:
   - Default
   - TransparentFX
