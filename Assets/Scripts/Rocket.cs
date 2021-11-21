@@ -12,7 +12,7 @@ public class Rocket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(Tags.WallDown.ToString());
     }
 
     // Update is called once per frame
@@ -21,15 +21,18 @@ public class Rocket : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log(other);
         if (other.gameObject.CompareTag(Tags.WallUp.ToString()))
         {
+            Debug.Log(this + "touch up wall");
             this.upIsBlocked = true;
         }
         
         if (other.gameObject.CompareTag(Tags.WallDown.ToString()))
         {
+            Debug.Log(this + "touch down wall");
             this.downIsBlocked = true;
         }
     }

@@ -19,13 +19,25 @@ public class RocketsController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            MoveRockets(moveAmount);
+            if (!(leftRocket.upIsBlocked && rightRocket.downIsBlocked))
+            {
+                MoveRockets(moveAmount);
+            }
+
+            leftRocket.downIsBlocked = false;
+            rightRocket.upIsBlocked = false;
         }
 
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            MoveRockets(-1 * moveAmount);
+            if (!(leftRocket.downIsBlocked || rightRocket.upIsBlocked))
+            {
+                MoveRockets(-1 * moveAmount);
+            }
+
+            leftRocket.upIsBlocked = false;
+            rightRocket.downIsBlocked = false;
         }
     }
 
