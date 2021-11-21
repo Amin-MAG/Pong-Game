@@ -15,7 +15,6 @@ public class UIController : MonoBehaviour
     {
         gameEvents.onGameOver.AddListener(showGameOver);
         gameEvents.onBallKicked.AddListener(onBallKicked);
-        gameEvents.onBallMissed.AddListener(onBallMissed);
 
         title.gameObject.SetActive(true);
         description.gameObject.SetActive(true);
@@ -37,13 +36,14 @@ public class UIController : MonoBehaviour
         description.gameObject.SetActive(false);
     }
 
-    public void onBallMissed()
-    {
-        title.gameObject.SetActive(true);
-        description.gameObject.SetActive(true);
-        title.text = "Ball Missed";
-        description.text = "You have another chance. Space to play";
-    }
+    // public void onBallMissed()
+    // {
+    //     new WaitForSeconds(1);
+    //     title.gameObject.SetActive(true);
+    //     description.gameObject.SetActive(true);
+    //     title.text = "Ball Missed";
+    //     description.text = "You have another chance. Space to play";
+    // }
 
     // Update is called once per frame
     void Update()

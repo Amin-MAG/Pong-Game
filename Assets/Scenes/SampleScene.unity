@@ -1536,7 +1536,12 @@ PrefabInstance:
     - target: {fileID: 4100830980509672815, guid: a36fb62851133794cbe5d51b5b645cc6,
         type: 3}
       propertyPath: randomAngle
-      value: 0.4
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100830980509672815, guid: a36fb62851133794cbe5d51b5b645cc6,
+        type: 3}
+      propertyPath: velocityAmount
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a36fb62851133794cbe5d51b5b645cc6, type: 3}

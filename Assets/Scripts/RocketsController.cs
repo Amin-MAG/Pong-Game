@@ -68,6 +68,5 @@ public class RocketsController : MonoBehaviour
         {
             this.gameEvents.onGameOver.Invoke();
         }
-
     }
 }
